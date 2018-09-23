@@ -3,16 +3,24 @@ package com.ozcloud.restaurant.controller;
 import com.ozcloud.restaurant.dtos.UserDTO;
 import com.ozcloud.restaurant.model.User;
 import com.ozcloud.restaurant.repository.UserRepository;
+import com.ozcloud.restaurant.utils.BaseResponse;
+import org.hibernate.id.GUIDGenerator;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.Serializable;
+import java.util.UUID;
+
 @RestController
-public class UserController {
+public class UserController implements Serializable {
 
     @Autowired
     private UserRepository userRepository;
@@ -20,8 +28,11 @@ public class UserController {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @PostMapping("/registerUser")
-    public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<BaseResponse> registerUser(@RequestBody UserDTO userDTO) throws Exception {
         try {
 
             User user = userRepository.findByUserName(userDTO.getUserName());
@@ -30,13 +41,19 @@ public class UserController {
 
             user = modelMapper.map(userDTO, User.class);
 
-            user.setRoles(new String[]{"USER"});
+            String pass = passwordEncoder.encode(user.getPassword());
+            user.setPassword(pass);
+            UUID uuid = UUID.randomUUID();
+
+            user.setUserGuid(uuid.toString());
+
+            user.setRoles(new String[]{"ADMIN"});
 
             User returnUser = userRepository.save(user);
 
-            return new ResponseEntity<String>("{\"result\": true, userId : " + returnUser.getId() + "}", HttpStatus.CREATED);
+            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(returnUser.getUserId())));
         } catch (Exception e) {
-            return new ResponseEntity<String>("{\"result\": false, error: \"" +e.getMessage()+"\"}", HttpStatus.BAD_REQUEST);
+            throw  new Exception(e);
         }
 
     }

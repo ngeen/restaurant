@@ -8,6 +8,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -24,7 +26,9 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         User user = userRepository.findByUserName("admin");
         if (user == null) {
-            user = new User(1,"admin", passwordEncoder.encode("admin"),new String[]{"ADMIN"});
+
+            UUID uuid = UUID.randomUUID();
+            user = new User("admin", passwordEncoder.encode("admin"),new String[]{"ADMIN"}, uuid.toString());
             userRepository.save(user);
         }
     }

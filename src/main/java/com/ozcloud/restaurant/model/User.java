@@ -16,12 +16,22 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue
-    private long id;
+    private long userId;
 
     private String userName;
 
     private String password;
 
+    private String userGuid;
+
     private String[] roles;
+
+    public User(String _userName, String _password, String[] _roles, String _userGuid){
+        this.setUserName(_userName);
+        this.setPassword(_password);
+        this.setRoles(_roles);
+        this.setUserGuid(_userGuid);
+
+    }
 
 }

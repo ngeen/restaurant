@@ -1,4 +1,4 @@
-package com.ozcloud.architect;
+package com.ozcloud.restaurant;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

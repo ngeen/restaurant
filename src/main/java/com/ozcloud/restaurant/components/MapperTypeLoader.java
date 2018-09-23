@@ -1,4 +1,4 @@
-package com.ozcloud.architect.components;
+package com.ozcloud.restaurant.components;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

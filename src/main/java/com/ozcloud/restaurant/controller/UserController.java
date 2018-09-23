@@ -1,8 +1,8 @@
-package com.ozcloud.architect.controller;
+package com.ozcloud.restaurant.controller;
 
-import com.ozcloud.architect.dtos.UserDTO;
-import com.ozcloud.architect.model.User;
-import com.ozcloud.architect.repository.UserRepository;
+import com.ozcloud.restaurant.dtos.UserDTO;
+import com.ozcloud.restaurant.model.User;
+import com.ozcloud.restaurant.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,7 +34,7 @@ public class UserController {
 
             User returnUser = userRepository.save(user);
 
-            return new ResponseEntity<String>("{\"result\":" + returnUser.getId() + "}", HttpStatus.CREATED);
+            return new ResponseEntity<String>("{\"result\": true, userId : " + returnUser.getId() + "}", HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<String>("{\"result\": false, error: \"" +e.getMessage()+"\"}", HttpStatus.BAD_REQUEST);
         }

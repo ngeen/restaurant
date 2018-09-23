@@ -1,9 +1,7 @@
-package com.ozcloud.architect.dtos;
+package com.ozcloud.restaurant.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.GeneratedValue;
 
 @Getter
 @Setter

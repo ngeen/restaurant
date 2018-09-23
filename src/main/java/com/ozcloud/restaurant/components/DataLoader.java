@@ -1,11 +1,10 @@
-package com.ozcloud.architect.components;
+package com.ozcloud.restaurant.components;
 
-import com.ozcloud.architect.model.User;
-import com.ozcloud.architect.repository.UserRepository;
+import com.ozcloud.restaurant.model.User;
+import com.ozcloud.restaurant.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 

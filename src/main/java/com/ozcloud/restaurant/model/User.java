@@ -1,4 +1,4 @@
-package com.ozcloud.architect.model;
+package com.ozcloud.restaurant.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

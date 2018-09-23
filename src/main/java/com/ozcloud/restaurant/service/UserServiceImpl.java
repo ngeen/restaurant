@@ -1,6 +1,6 @@
-package com.ozcloud.architect.service;
+package com.ozcloud.restaurant.service;
 
-import com.ozcloud.architect.repository.UserRepository;
+import com.ozcloud.restaurant.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        com.ozcloud.architect.model.User user = userRepository.findByUserName(s);
+        com.ozcloud.restaurant.model.User user = userRepository.findByUserName(s);
 
         //check if this user with this username exist, if not, throw an exception
         // and stop the login process
@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserDetailsService {
         return authList;
     }
 
-    public com.ozcloud.architect.model.User getAuthUser() {
+    public com.ozcloud.restaurant.model.User getAuthUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return userRepository.findByUserName(authentication.getName());
     }

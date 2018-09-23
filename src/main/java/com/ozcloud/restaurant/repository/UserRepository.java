@@ -1,6 +1,6 @@
-package com.ozcloud.architect.repository;
+package com.ozcloud.restaurant.repository;
 
-import com.ozcloud.architect.model.User;
+import com.ozcloud.restaurant.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

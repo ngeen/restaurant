@@ -1,4 +1,4 @@
-package com.ozcloud.architect.configs;
+package com.ozcloud.restaurant.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

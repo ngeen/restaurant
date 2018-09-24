@@ -58,17 +58,19 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
-        security.allowFormAuthenticationForClients();
+        security
+                .tokenKeyAccess("permitAll()")
+                .checkTokenAccess("isAuthenticated()")
+                .allowFormAuthenticationForClients();
+
     }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
-        clients.inMemory().withClient(clientId).secret(passwordEncoder.encode(clientSecret)).scopes("read", "write")
+        clients.inMemory().withClient(clientId).secret(passwordEncoder.encode(clientSecret)).scopes("all")
                 .authorizedGrantTypes("implicit","refresh_token", "password", "authorization_code")
-                .accessTokenValiditySeconds(20000)
-                .refreshTokenValiditySeconds(20000);
+                .autoApprove(true);
 
     }
 

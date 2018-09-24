@@ -16,7 +16,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.ozcloud.architect.controller")).paths(PathSelectors.any()).build();
+                .apis(RequestHandlerSelectors.basePackage("com.ozcloud.restaurant.controller")).paths(PathSelectors.any()).build();
 
     }
 

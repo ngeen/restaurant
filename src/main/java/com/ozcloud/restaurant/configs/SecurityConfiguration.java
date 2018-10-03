@@ -58,7 +58,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 "/h2/**",
                 "/registerUser",
                 "/resources/**",
-                "/test");
+                "/test",
+                "/getItems");
     }
 
 }

@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+import org.mapstruct.Mapping;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -36,9 +39,15 @@ public class Item implements Serializable {
     private int itemType;
     private int orderNo;
 
+    @ManyToOne
+    @JoinColumn(name = "parentId")
+    @JsonManagedReference
+    private Item parentItem;
+
     @OneToMany
     @JsonIgnore
-    @JoinColumn(name = "parent_id")
+    @JoinColumn(name = "parentId")
+    @JsonBackReference
     private List<Item> children = new LinkedList<Item>();
 
     public ItemType getItemType () {

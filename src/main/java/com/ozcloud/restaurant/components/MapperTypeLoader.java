@@ -1,10 +1,15 @@
 package com.ozcloud.restaurant.components;
 
+import com.ozcloud.restaurant.dtos.ItemDTO;
+import com.ozcloud.restaurant.model.Item;
+import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import javax.print.attribute.standard.Destination;
 
 @Component
 public class MapperTypeLoader implements ApplicationRunner {
@@ -15,6 +20,16 @@ public class MapperTypeLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        Converter<Item, ItemDTO> converter = context -> {
+            ItemDTO itemDTO = context.getDestination();
+            Item item = context.getSource();
+          if(item.getParentItem() != null)
+              itemDTO.setParentId(item.getParentItem().getItemId());
+
+          return itemDTO;
+
+        };
+        modelMapper.createTypeMap(Item.class, ItemDTO.class).setPostConverter(converter);
 		/*Converter<BasketDTO, Basket> converter = context -> {
 			Basket entity = context.getDestination();
 

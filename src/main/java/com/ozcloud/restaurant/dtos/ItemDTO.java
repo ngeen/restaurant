@@ -16,5 +16,6 @@ public class ItemDTO {
     private String status;
     private String itemType;
     private int orderNo;
+    private long parentId;
 
 }

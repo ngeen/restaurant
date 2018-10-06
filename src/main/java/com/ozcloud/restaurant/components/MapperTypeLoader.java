@@ -1,6 +1,7 @@
 package com.ozcloud.restaurant.components;
 
 import com.ozcloud.restaurant.dtos.ItemDTO;
+import com.ozcloud.restaurant.dtos.ProductDTO;
 import com.ozcloud.restaurant.model.Item;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
@@ -30,6 +31,17 @@ public class MapperTypeLoader implements ApplicationRunner {
 
         };
         modelMapper.createTypeMap(Item.class, ItemDTO.class).setPostConverter(converter);
+
+        Converter<Item, ProductDTO> converterProduct = context -> {
+            ProductDTO productDTO = context.getDestination();
+            Item item = context.getSource();
+            if(item.getParentItem() != null)
+                productDTO.setParentId(item.getParentItem().getItemId());
+
+            return productDTO;
+
+        };
+        modelMapper.createTypeMap(Item.class, ProductDTO.class).setPostConverter(converterProduct);
 		/*Converter<BasketDTO, Basket> converter = context -> {
 			Basket entity = context.getDestination();
 

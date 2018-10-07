@@ -31,7 +31,7 @@ public class ItemController implements Serializable {
     @GetMapping("/getItems")
     public ResponseEntity<BaseResponse> getAllItems() throws Exception {
         try {
-            List<Item> items = Lists.newArrayList(itemRepository.findAll());
+            List<Item> items = Lists.newArrayList(itemRepository.findAllByOrderByItemTypeAsc());
 
             Type listType = new TypeToken<List<ProductDTO>>() {}.getType();
             List<ProductDTO> itemList = modelMapper.map(items,listType);

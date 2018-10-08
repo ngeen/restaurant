@@ -593,6 +593,14 @@ public class DataLoader implements ApplicationRunner {
             product.setParentItem(category);
             product = productRepository.save(product);
 
+            category = new Item();
+            category.setName("Pizzalar");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Pizzalar");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
             product = new Product();
             product.setName("Süper Pizza");
             product.setDescription("Salam, sosis, sucuk, mantar, biber, siyah zeytin, domates sosu, mozarella peyniri.");
@@ -677,6 +685,754 @@ public class DataLoader implements ApplicationRunner {
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
             product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Wraplar");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Wraplar");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Et Wrap");
+            product.setDescription("Bonfile parçaları, mantar, biber, soğan, sarımsak, domates, yeşillik ve patates ile servis edilir");
+            product.setImage("http://www.patista.net/Site2018/wp-content/uploads/urunler/patista_et_wrap.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Kajun Chicken Wrap");
+            product.setDescription("Kajun baharatlı tavuk parçaları, mantar, biber, soğan, sarımsak, domates, yeşillik ve patates ile servis edilir");
+            product.setImage("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2010/8/30/0/FNM_100110-Tailgating-008_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371593124011.jpeg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Kırmızı ve Beyaz Etler");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Kırmızı ve Beyaz Etler");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Mantar Soslu Bonfile (200 gr.)");
+            product.setDescription("Mevsim yeşillikleri, pilav ve elma dilim patates ile servis edilir");
+            product.setImage("http://www.ardaninmutfagi.com/wp-content/uploads/2013/06/mantar-soslu-bonfile-632x361.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Beğendi Soslu Bonfile (200 gr.)");
+            product.setDescription("Mevsim yeşillikleri, pilav ve elma dilim patates ile servis edilir");
+            product.setImage("https://iasbh.tmgrup.com.tr/ce13b4/752/395/0/108/800/528?u=https://isbh.tmgrup.com.tr/sbh/2018/05/01/hunkar-begendi-tarifi-hunkar-begendi-nasil-yapilir-1525162375252.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Et Fajita");
+            product.setDescription("Salsa sos, guacamole ve kremalı ekşili sos ile servis edilir");
+            product.setImage("https://img.yemektarifleri.com/photos/27253/1502283627_400.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Çömlekte Et Sote");
+            product.setDescription("Çömlekte Et Sote");
+            product.setImage("https://i.nefisyemektarifleri.com/2013/04/guvecte-kasar-peynirli-et-sote-500x333.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Cızbız Ev Köftesi");
+            product.setDescription("Mevsi yeşillikleri ve kızarmış patates ile servis edilir");
+            product.setImage("http://lezzetler.com/images/yuklenen/cizbiz-kofte-1847.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ispanaklı Dolgulu Tavuk");
+            product.setDescription("Panelenmiş tavuk içine mozarella, beyaz peynir, tulum peynir ile yapılır. Mevsim yeşillikleri, pilav ve elma dilim patates ile servis edilir");
+            product.setImage("https://superbiyemek.com/fileman/Uploads/garn%C4%B1tur%20dolgulu%20tavuk.png");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Tavuk Şinitzel");
+            product.setDescription("Mevsim yeşillikleri ve kızarmış patates ile servis edilir");
+            product.setImage("https://cdn.ye-mek.net/App_UI/Img/out/650/2012/07/tavuk-c59finitzel-resimli-yemek-tarifi-11.jpg?h=487&w=650");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Kremalı Tavuk Izgara");
+            product.setDescription("Mevsim yeşillikleri, pilav ve elma dilim patates ile servis edilir");
+            product.setImage("http://www.yesiltopuklar.com/wp-content/uploads/2016/06/Kremal%C4%B1-Mantar-Soslu-Tavuk-Izgara-2-785x600.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Kremalı Tavuk Izgara");
+            product.setDescription("Mevsim yeşillikleri, pilav ve elma dilim patates ile servis edilir");
+            product.setImage("http://www.yesiltopuklar.com/wp-content/uploads/2016/06/Kremal%C4%B1-Mantar-Soslu-Tavuk-Izgara-2-785x600.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Tavuk Fajita");
+            product.setDescription("Salsa sos, guacamole ve kremalı ekşili sos ile servis edilir");
+            product.setImage("https://i.nefisyemektarifleri.com/2016/05/14/tavuk-fajita-6.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Balıklar");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Balıklar");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Levrek Izgara");
+            product.setDescription("Levrek Izgara");
+            product.setImage("http://www.nefisyemekler.net/wp-content/uploads/2013/07/Levrek-%C4%B1zgara-610x300.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Çupra Izgara");
+            product.setDescription("Çupra Izgara");
+            product.setImage("http://www.nefisyemekler.net/wp-content/uploads/2013/02/%C3%87ipura-%C4%B1zgara-600x300.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Somon Izgara");
+            product.setDescription("Somon Izgara");
+            product.setImage("https://i.superhaber.tv/2/649/382/storage/old/assets/uploads/images/content/2017/03/27/cropped_content_somon-izgara-nasil-yapilir-somon-baliginin-faydalari-nelerdir_A1Phzea141AtoXL.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Çıtır Sardalya Tava");
+            product.setDescription("Çıtır Sardalya Tava");
+            product.setImage("http://www.yemektarifci.com/uploads/media/recipe/0001/02/thumb_1022_recipe_default.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Mezgit Tava");
+            product.setDescription("Mezgit Tava");
+            product.setImage("http://www.yemektarifi.com/wp-content/uploads/2017/08/mezgit-tava-1.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Kalamar Tava");
+            product.setDescription("Kalamar Tava");
+            product.setImage("https://cdn.yemek.com/mncrop/600/315/uploads/2014/10/balik-osman-kalamar-tava-tarifi.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Tereyağlı Karides");
+            product.setDescription("Tereyağlı Karides");
+            product.setImage("https://baliktarifi.com/wp-content/uploads/2015/07/tereyagli-sarimsakli-karides-tava-tarifi-2.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Karides Güveç");
+            product.setDescription("Karides Güveç");
+            product.setImage("https://baliktarifi.com/wp-content/uploads/2017/10/mantarli-karides-guvec-tarifi.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Okyanus Lokumu");
+            product.setDescription("Okyanus Lokumu");
+            product.setImage("http://www.kumsalsuurunleri.com.tr/wp-content/uploads/2016/12/1-10.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Midye Dolma");
+            product.setDescription("Midye Dolma");
+            product.setImage("http://www.yemektarifci.com/uploads/media/recipe/0001/02/thumb_1096_recipe_default.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Tatlılar");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Tatlılar");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Çikolatalı Sufle");
+            product.setDescription("Çikolatalı Sufle");
+            product.setImage("https://lezzet.blob.core.windows.net/images-xxlarge-recipe/cikolatali_sufle-cc5cd6ba-ef80-4817-a454-7be5d9c802a6.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Brownie");
+            product.setDescription("Brownie");
+            product.setImage("https://images.media-allrecipes.com/userphotos/560x315/3850414.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Bal Badem");
+            product.setDescription("Bal Badem");
+            product.setImage("https://lezzet.blob.core.windows.net/images-xxlarge-recipe/bal-badem-4d290956-44dc-4a4e-8ffc-ab55f5a15d9e.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Tiramisu");
+            product.setDescription("Tiramisu");
+            product.setImage("https://www.fifteenspatulas.com/wp-content/uploads/2012/11/Tiramisu-Fifteen-Spatulas-1-640x424.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Top Dondurma");
+            product.setDescription("Top Dondurma");
+            product.setImage("https://diyetkolik.com/site_media/media/nutrition_images/meyveli-dondurma.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Kahveler");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Kahveler");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Americano");
+            product.setDescription("Americano");
+            product.setImage("https://globalassets.starbucks.com/assets/2a4807223b53455b89f792b5e25ce89e.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Cappuccino");
+            product.setDescription("Cappuccino");
+            product.setImage("https://www.merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/cappuccino-2029-e80b7c6d318c7862df2c4c8623a11f99@1x.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Cafe Latte");
+            product.setDescription("Cafe Latte");
+            product.setImage("https://www.nespresso.com/ncp/res/uploads/recipes/95386cc6cc803643f38d5e2982a56698c89d9b7d.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Chocolate Mocha");
+            product.setDescription("Chocolate Mocha");
+            product.setImage("https://www.torani.com/sites/default/files/taxonomy/drinktypes/illustration/Mochas_0.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("White Chocolate Mocha");
+            product.setDescription("White Chocolate Mocha");
+            product.setImage("https://globalassets.starbucks.com/assets/bba1d79372384d39aa1662f481584610.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("İrlanda Kahvesi");
+            product.setDescription("İrlanda Kahvesi");
+            product.setImage("http://4.bp.blogspot.com/-1nA_Dy50CJo/UECqvxOl3LI/AAAAAAAABpE/IU_OHFLIauY/s400/coffee.JPG");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Nescafe");
+            product.setDescription("Nescafe");
+            product.setImage("http://rtpsupplies.ie/wp-content/uploads/2017/09/NESCAFE.M.750-001.png");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Sütten Nescafe");
+            product.setDescription("Sütten Nescafe");
+            product.setImage("http://www.agaclar.net/forum/attachments/icecekler/229022d1309253501-img_0913.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Sıcak Çikolata");
+            product.setDescription("Sıcak Çikolata");
+            product.setImage("http://i.milliyet.com.tr/YeniAnaResim/2017/12/29/fft99_mf10526350.Jpeg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Türk Kahvesi");
+            product.setDescription("Türk Kahvesi");
+            product.setImage("http://i.hurimg.com/i/hurriyet/75/750x422/58bff72567b0a92cf42593bc.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Espresso");
+            product.setDescription("Espresso");
+            product.setImage("http://www.delonghi.com/Global/recipes/Coffee/espresso.png");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Sahlep");
+            product.setDescription("Sahlep");
+            product.setImage("https://i.ebayimg.com/images/g/qjoAAOSwYZ9ZnWXY/s-l300.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Çaylar");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Çaylar");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Bardak Çay");
+            product.setDescription("Bardak Çay");
+            product.setImage("https://cdn.yeniakit.com.tr/images/news/625/bardak-bardak-cay-icen-mutlaka-okusun-h1436852831.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Fincan Çay");
+            product.setDescription("Fincan Çay");
+            product.setImage("http://www.gidagundemi.com/images/fotogaleri/gunde-20-fincan-cay-icerseniz-bakin-ne-oluyor-734-sira2.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Yeşil Çay");
+            product.setDescription("Yeşil Çay");
+            product.setImage("https://isbh.tmgrup.com.tr/sbh/2015/04/17/650x344/1429257637350.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ada Çayı");
+            product.setDescription("Ada Çayı");
+            product.setImage("http://www.turkiyegazetesi.com.tr/images/haberler/2017_12/buyuk/adacayi-neye-iyi-gelir-adacayi-faydalari-neler-nasil-demlenir--1512904481.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ihlamur");
+            product.setDescription("Ihlamur");
+            product.setImage("https://isbh.tmgrup.com.tr/sbh/2015/12/23/650x344/1450882619560.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Kuşburnu");
+            product.setDescription("Kuşburnu");
+            product.setImage("https://im.hthayat.com/2017/02/03/ver1537858646/1045896_620x360.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Kış Çayı");
+            product.setDescription("Kış Çayı");
+            product.setImage("https://www.nnedir.com/wp-content/uploads/2014/11/kis_cayi_tarifleri.jpeg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ice Americano");
+            product.setDescription("Ice Americano");
+            product.setImage("https://www.mrcoffee.com/on/demandware.static/-/Sites-mr-coffee-Library/default/dwf77ed1f2/images/blog/How-To-Make-The-Perfect-Iced-Americano_1770_40122425_0_14128126_500.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ice Latte");
+            product.setDescription("Ice Latte");
+            product.setImage("https://www.nespresso.com/ncp/res/uploads/recipes/8fe7c911680055d1c8461f8b491e153b1c98839e.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ice Chocolate Mocha");
+            product.setDescription("Ice Chocolate Mocha");
+            product.setImage("https://www.torani.com/sites/default/files/recipes/illustration/Iced%20mint%20mocha.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ice White Chocolate Mocha");
+            product.setDescription("Ice White Chocolate Mocha");
+            product.setImage("https://globalassets.starbucks.com/assets/637cc460f9934ca3ac1f9b8d5aa2caf0.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Smoothie");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Smoothie");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Milk Shake (Muz/Çilek/Çikolata)");
+            product.setDescription("Milk Shake (Muz/Çilek/Çikolata)");
+            product.setImage("https://i.sozcu.com.tr/wp-content/uploads/2018/01/cileklimilkshake.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Pina Colada Smoothie");
+            product.setDescription("Pina Colada Smoothie");
+            product.setImage("http://thebearfootbaker.com/wp-content/uploads/2013/04/Pina-Colada-Smoothie-by-www.thebearfootbaker.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Çilek Muz Smoothie");
+            product.setDescription("Çilek Muz Smoothie");
+            product.setImage("https://core-cdn.russellhobbs.com/images/a513t_strawberry_banana_smoothie_main.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            category = new Item();
+            category.setName("Soğuk İçecekler");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Soğuk İçecekler");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
+            product = new Product();
+            product.setName("Coca Cola/Fanta/Sprite");
+            product.setDescription("Coca Cola/Fanta/Sprite");
+            product.setImage("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX20864672.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ice Tea (Şeftali/Limon)");
+            product.setDescription("Ice Tea (Şeftali/Limon)");
+            product.setImage("https://cdn.akakce.com/lipton/lipton-ice-tea-330-ml-seftali-z.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ev Yapımı Limonata");
+            product.setDescription("Ev Yapımı Limonata");
+            product.setImage("http://i.milliyet.com.tr/YeniAnaResim/2017/07/07/fft99_mf9448606.Jpeg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Taze Sıkılmış Portakal Suyu");
+            product.setDescription("Taze Sıkılmış Portakal Suyu");
+            product.setImage("https://im.hthayat.com/2013/04/02/ver1445611837/1012906_620x413.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Soda");
+            product.setDescription("Soda");
+            product.setImage("https://cdn.o-fix.com/Images/SiteImages/ProductDetailImage/Beypazari-Maden-Suyu-Cam-Sise-200-Ml-24-Adet_RI60662FT2MF220322.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Meyveli Soda (Elma/Limon)");
+            product.setDescription("Meyveli Soda (Elma/Limon)");
+            product.setImage("http://www.uludagicecek.com.tr/_assets/img/sub/urunler/meyveli-maden-sulari/uludag-frutti-page-v2.png");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Meyve Suyu (Vişne/Şeftali/Karışık)");
+            product.setDescription("Meyve Suyu (Vişne/Şeftali/Karışık)");
+            product.setImage("https://n11scdn.akamaized.net/a1/450/ev-yasam/meyve-suyu/dimes-meyve-suyu-54-adet-200-ml-2-koli-27li__0668797139766906.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Ayran");
+            product.setDescription("Ayran");
+            product.setImage("https://online.yunusmarket.com.tr/720-large_default/cim-bardak-ayran-195-ml.jpg");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+            product = new Product();
+            product.setName("Redbull");
+            product.setDescription("Redbull");
+            product.setImage("https://officedepot.scene7.com/is/image/officedepot/729770_p?$OD%2DLarge$&wid=450&hei=450");
+            product.setCalories(10);
+            product.setPrepareTime(5);
+            product.setProductStatus(ProductStatus.NEW);
+            product.setItemType(ItemType.PRODUCT);
+            product.setParentItem(category);
+            product = productRepository.save(product);
+
+
 
         }
     }

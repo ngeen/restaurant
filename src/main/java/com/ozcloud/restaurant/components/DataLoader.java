@@ -1240,6 +1240,14 @@ public class DataLoader implements ApplicationRunner {
             product.setParentItem(category);
             product = productRepository.save(product);
 
+            category = new Item();
+            category.setName("Soğuk Kahveler");
+            category.setItemType(ItemType.CATEGORY);
+            category.setDescription("Soğuk Kahveler");
+            category.setImage("fas fa-coffee");
+            category.setParentItem(menu);
+            category = itemRepository.save(category);
+
             product = new Product();
             product.setName("Ice Americano");
             product.setDescription("Ice Americano");

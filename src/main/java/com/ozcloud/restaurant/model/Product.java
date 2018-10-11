@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -21,6 +22,7 @@ public class Product extends  Item {
     private int productStatus;
     private boolean isVirtualCategory;
     private int virtualOrderNo;
+    private BigDecimal price;
 
     public ProductStatus getProductStatus () {
         return ProductStatus.parse(this.productStatus);

@@ -15,6 +15,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Random;
 import java.util.UUID;
 
 @Component
@@ -70,6 +73,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -81,6 +85,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -92,6 +97,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             Item subCategory = new Item();
@@ -111,6 +117,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -122,6 +129,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -133,6 +141,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -144,6 +153,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -155,6 +165,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -166,6 +177,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -177,6 +189,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -188,6 +201,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             subCategory = new Item();
@@ -196,6 +210,7 @@ public class DataLoader implements ApplicationRunner {
             subCategory.setDescription("Omletler");
             subCategory.setImage("fas fa-coffee");
             subCategory.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             subCategory = itemRepository.save(subCategory);
 
             product = new Product();
@@ -207,6 +222,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -218,6 +234,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -229,6 +246,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -240,6 +258,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             subCategory = new Item();
@@ -259,6 +278,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -270,6 +290,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -281,6 +302,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -292,6 +314,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -303,6 +326,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -314,6 +338,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -325,6 +350,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -336,6 +362,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(subCategory);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -355,6 +382,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -366,6 +394,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -377,6 +406,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -388,6 +418,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -399,6 +430,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -410,6 +442,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -421,6 +454,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -440,6 +474,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -451,6 +486,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -462,6 +498,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -473,6 +510,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -484,6 +522,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -495,6 +534,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -506,6 +546,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -517,6 +558,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -528,6 +570,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -539,6 +582,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -558,6 +602,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -569,6 +614,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -580,6 +626,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -591,6 +638,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -599,6 +647,7 @@ public class DataLoader implements ApplicationRunner {
             category.setDescription("Pizzalar");
             category.setImage("fas fa-coffee");
             category.setParentItem(menu);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             category = itemRepository.save(category);
 
             product = new Product();
@@ -610,6 +659,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -621,6 +671,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -632,6 +683,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -643,6 +695,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -662,6 +715,8 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
+
             product = productRepository.save(product);
 
             product = new Product();
@@ -673,6 +728,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -684,6 +740,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -703,6 +760,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -714,6 +772,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -733,6 +792,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -744,6 +804,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -755,6 +816,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -766,6 +828,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -777,6 +840,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -788,6 +852,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -799,6 +864,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -810,6 +876,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -821,6 +888,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -832,6 +900,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -851,6 +920,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -862,6 +932,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -873,6 +944,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -884,6 +956,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -895,6 +968,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -906,6 +980,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -917,6 +992,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -928,6 +1004,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -939,6 +1016,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -950,6 +1028,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -969,6 +1048,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -980,6 +1060,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -991,6 +1072,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1002,6 +1084,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1013,6 +1096,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -1032,6 +1116,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1043,6 +1128,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1054,6 +1140,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1065,6 +1152,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1076,6 +1164,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1087,6 +1176,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1098,6 +1188,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1109,6 +1200,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1120,6 +1212,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1131,6 +1224,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1142,6 +1236,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1153,6 +1248,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -1172,6 +1268,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1183,6 +1280,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1194,6 +1292,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1205,6 +1304,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1216,6 +1316,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1227,6 +1328,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1238,6 +1340,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -1257,6 +1360,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1268,6 +1372,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1279,6 +1384,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1290,6 +1396,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -1309,6 +1416,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1320,6 +1428,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1331,6 +1440,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             category = new Item();
@@ -1350,6 +1460,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1361,6 +1472,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1372,6 +1484,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1383,6 +1496,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1394,6 +1508,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1405,6 +1520,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1416,6 +1532,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1427,6 +1544,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
             product = new Product();
@@ -1438,6 +1556,7 @@ public class DataLoader implements ApplicationRunner {
             product.setProductStatus(ProductStatus.NEW);
             product.setItemType(ItemType.PRODUCT);
             product.setParentItem(category);
+            product.setPrice(new BigDecimal(BigInteger.valueOf(new Random().nextInt(301)), 2));
             product = productRepository.save(product);
 
 

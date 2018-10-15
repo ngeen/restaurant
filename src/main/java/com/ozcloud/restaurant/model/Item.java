@@ -40,6 +40,16 @@ public class Item implements Serializable {
     private int orderNo;
 
     @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
+    @OneToMany
+    @JsonIgnore
+    @JoinColumn(name = "venueId")
+    @JsonBackReference
+    private List<Venue> venueList = new LinkedList<Venue>();
+
+    @ManyToOne
     @JoinColumn(name = "parentId")
     @JsonManagedReference
     private Item parentItem;

@@ -20,7 +20,12 @@ public class Venue implements Serializable {
     private long venueId;
 
     @ManyToOne
+    @JoinColumn(name = "userId")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "menuItemId")
+    private Item menuItem;
 
     private String venueName;
 

@@ -34,7 +34,7 @@ public class VenueController implements Serializable{
         try {
 
             Venue venue = modelMapper.map(venueDTO, Venue.class);
-
+            venue.setUser(userServiceImpl.getAuthUser());
             venue = venueRepository.save(venue);
 
             return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(venue.getVenueId())));
@@ -48,10 +48,13 @@ public class VenueController implements Serializable{
     public ResponseEntity<BaseResponse> updateVenue(@RequestBody VenueDTO venueDTO) throws Exception {
         try {
             Venue venue = venueRepository.findById(venueDTO.getVenueId()).orElse(null);
+
             if(venue == null)
                 throw new Exception("VenueNotFind");
+
             if(venue.getUser().getUserId() != userServiceImpl.getAuthUser().getUserId())
                 throw new Exception("WrongUserOwner");
+
             venue = modelMapper.map(venueDTO, Venue.class);
 
             venue = venueRepository.save(venue);

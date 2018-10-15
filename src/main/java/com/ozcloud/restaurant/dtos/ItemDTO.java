@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class ItemDTO {
 
+    private long id;
     private String itemGuid;
     private String name;
     private String description;

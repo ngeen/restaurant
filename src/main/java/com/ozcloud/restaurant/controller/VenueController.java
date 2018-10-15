@@ -36,7 +36,7 @@ public class VenueController implements Serializable{
 
             venue = venueRepository.save(venue);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(venue.getVenueGuid())));
+            return ResponseEntity.ok(BaseResponse.getOkResponse(venue.getVenueGuid()));
         } catch (Exception e) {
             throw new Exception(e);
         }
@@ -58,7 +58,7 @@ public class VenueController implements Serializable{
 
             venue = venueRepository.save(venue);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(venue.getVenueGuid())));
+            return ResponseEntity.ok(BaseResponse.getOkResponse(venue.getVenueGuid()));
         } catch (Exception e) {
             throw new Exception(e);
         }

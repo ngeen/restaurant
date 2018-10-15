@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VenueRepository extends CrudRepository<Venue, Long> {
+    Venue findByVenueGuid(String guid);
 }

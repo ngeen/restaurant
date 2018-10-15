@@ -35,5 +35,7 @@ public class Venue implements Serializable {
 
     private String foursquareId;
 
+    private String venueGuid;
+
     private int infoScreenStatus;
 }

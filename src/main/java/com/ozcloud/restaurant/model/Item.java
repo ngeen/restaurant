@@ -38,6 +38,7 @@ public class Item implements Serializable {
     private int status;
     private int itemType;
     private int orderNo;
+    private String itemGuid;
 
     @ManyToOne
     @JoinColumn(name = "userId")

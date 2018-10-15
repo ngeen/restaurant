@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter @Setter
 public class VenueDTO {
 
-    private long venueId;
+    private String venueGuid;
 
     private String venueName;
 

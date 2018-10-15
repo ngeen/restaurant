@@ -1,20 +1,15 @@
 package com.ozcloud.restaurant.controller;
 
-import com.ozcloud.restaurant.dtos.UserDTO;
 import com.ozcloud.restaurant.dtos.VenueDTO;
-import com.ozcloud.restaurant.model.User;
 import com.ozcloud.restaurant.model.Venue;
-import com.ozcloud.restaurant.repository.UserRepository;
 import com.ozcloud.restaurant.repository.VenueRepository;
 import com.ozcloud.restaurant.service.UserServiceImpl;
 import com.ozcloud.restaurant.utils.BaseResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityNotFoundException;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -35,9 +30,13 @@ public class VenueController implements Serializable{
 
             Venue venue = modelMapper.map(venueDTO, Venue.class);
             venue.setUser(userServiceImpl.getAuthUser());
+
+            UUID uuid = UUID.randomUUID();
+            venue.setVenueGuid(uuid.toString());
+
             venue = venueRepository.save(venue);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(venue.getVenueId())));
+            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(venue.getVenueGuid())));
         } catch (Exception e) {
             throw new Exception(e);
         }
@@ -47,7 +46,7 @@ public class VenueController implements Serializable{
     @PostMapping("/updateVenue")
     public ResponseEntity<BaseResponse> updateVenue(@RequestBody VenueDTO venueDTO) throws Exception {
         try {
-            Venue venue = venueRepository.findById(venueDTO.getVenueId()).orElse(null);
+            Venue venue = venueRepository.findByVenueGuid(venueDTO.getVenueGuid());
 
             if(venue == null)
                 throw new Exception("VenueNotFind");
@@ -59,17 +58,17 @@ public class VenueController implements Serializable{
 
             venue = venueRepository.save(venue);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(venue.getVenueId())));
+            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(venue.getVenueGuid())));
         } catch (Exception e) {
             throw new Exception(e);
         }
 
     }
 
-    @GetMapping("/venueDetail/{id}")
-    public ResponseEntity<BaseResponse> getVenueDetail(@PathVariable("id") long venueId) throws Exception {
+    @GetMapping("/venueDetail/{guid}")
+    public ResponseEntity<BaseResponse> getVenueDetail(@PathVariable("guid") String venueGuid) throws Exception {
         try {
-            Venue venue = venueRepository.findById(venueId).orElse(null);
+            Venue venue = venueRepository.findByVenueGuid(venueGuid);
 
             if(venue == null)
                 throw new Exception("VenueNotFind");

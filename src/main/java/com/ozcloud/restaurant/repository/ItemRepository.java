@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ItemRepository extends CrudRepository<Item, Long> {
     public List<Item> findAllByOrderByItemTypeAsc();
+    Item findByItemGuid(String guid);
 }

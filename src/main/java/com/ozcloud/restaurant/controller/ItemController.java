@@ -3,13 +3,10 @@ package com.ozcloud.restaurant.controller;
 import com.google.common.collect.Lists;
 import com.ozcloud.restaurant.dtos.ItemDTO;
 import com.ozcloud.restaurant.dtos.ProductDTO;
-import com.ozcloud.restaurant.dtos.UserDTO;
 import com.ozcloud.restaurant.enums.ItemType;
 import com.ozcloud.restaurant.model.Item;
 import com.ozcloud.restaurant.model.Product;
-import com.ozcloud.restaurant.model.Venue;
 import com.ozcloud.restaurant.repository.ItemRepository;
-import com.ozcloud.restaurant.repository.ProductRepository;
 import com.ozcloud.restaurant.service.UserServiceImpl;
 import com.ozcloud.restaurant.utils.BaseResponse;
 import org.modelmapper.ModelMapper;
@@ -23,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class ItemController implements Serializable {
@@ -61,6 +58,8 @@ public class ItemController implements Serializable {
             menu.setName(itemDTO.getName());
             menu.setDescription(itemDTO.getDescription());
             menu.setUser(userServiceImpl.getAuthUser());
+            UUID uuid = UUID.randomUUID();
+            menu.setItemGuid(uuid.toString());
             menu = itemRepository.save(menu);
 
             return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(menu.getItemId())));
@@ -78,6 +77,8 @@ public class ItemController implements Serializable {
             Item item = modelMapper.map(itemDTO, Item.class);
             item.setItemType(ItemType.MENU);
             item.setUser(userServiceImpl.getAuthUser());
+            UUID uuid = UUID.randomUUID();
+            item.setItemGuid(uuid.toString());
             item = itemRepository.save(item);
 
             return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(item.getItemId())));
@@ -95,6 +96,8 @@ public class ItemController implements Serializable {
             Product product = modelMapper.map(productDTO, Product.class);
             product.setItemType(ItemType.PRODUCT);
             product.setUser(userServiceImpl.getAuthUser());
+            UUID uuid = UUID.randomUUID();
+            product.setItemGuid(uuid.toString());
             product = itemRepository.save(product);
 
             return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(product.getItemId())));
@@ -106,7 +109,7 @@ public class ItemController implements Serializable {
     @PostMapping("/updateItem")
     public ResponseEntity<BaseResponse> updateItem(@RequestBody ItemDTO itemDTO) throws Exception {
         try {
-            Item item = itemRepository.findById(itemDTO.getId()).orElse(null);
+            Item item = itemRepository.findByItemGuid(itemDTO.getItemGuid());
             if(item == null)
                 throw new Exception("MissingItem");
 
@@ -116,7 +119,7 @@ public class ItemController implements Serializable {
             item = modelMapper.map(itemDTO, Item.class);
             item = itemRepository.save(item);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(item.getItemId())));
+            return ResponseEntity.ok(BaseResponse.getOkResponse(item.getItemGuid()));
         } catch (Exception e) {
             throw  new Exception(e);
         }
@@ -125,7 +128,7 @@ public class ItemController implements Serializable {
     @PostMapping("/deleteItem")
     public ResponseEntity<BaseResponse> deleteItem(@RequestBody ItemDTO itemDTO) throws Exception {
         try {
-            Item item = itemRepository.findById(itemDTO.getId()).orElse(null);
+            Item item = itemRepository.findByItemGuid(itemDTO.getItemGuid());
             if(item == null)
                 throw new Exception("MissingItem");
 

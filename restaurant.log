@@ -13353,3 +13353,7 @@ java.lang.IllegalArgumentException: Invalid character found in method name. HTTP
 [2018-10-16T22:06:45.045Z] [org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor] [http-nio-8081-exec-5] [266] [DEBUG] Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 [2018-10-16T22:06:45.045Z] [org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor] [http-nio-8081-exec-5] [284] [DEBUG] Writing [com.ozcloud.restaurant.utils.BaseResponse@70e6c184]
 [2018-10-16T22:06:45.045Z] [org.springframework.web.servlet.FrameworkServlet] [http-nio-8081-exec-5] [1121] [DEBUG] Completed 200 OK
+[2018-10-16T22:15:08.008Z] [org.springframework.scheduling.concurrent.ExecutorConfigurationSupport] [Thread-34] [208] [INFO ] Shutting down ExecutorService 'applicationTaskExecutor'
+[2018-10-16T22:15:08.008Z] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [Thread-34] [597] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2018-10-16T22:15:08.008Z] [com.zaxxer.hikari.HikariDataSource] [Thread-34] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2018-10-16T22:15:08.008Z] [com.zaxxer.hikari.HikariDataSource] [Thread-34] [352] [INFO ] HikariPool-1 - Shutdown completed.

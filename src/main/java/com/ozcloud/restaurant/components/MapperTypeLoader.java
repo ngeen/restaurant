@@ -2,9 +2,12 @@ package com.ozcloud.restaurant.components;
 
 import com.ozcloud.restaurant.dtos.ItemDTO;
 import com.ozcloud.restaurant.dtos.ProductDTO;
+import com.ozcloud.restaurant.dtos.VenueDTO;
 import com.ozcloud.restaurant.model.Item;
+import com.ozcloud.restaurant.model.Venue;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -42,6 +45,15 @@ public class MapperTypeLoader implements ApplicationRunner {
 
         };
         modelMapper.createTypeMap(Item.class, ProductDTO.class).setPostConverter(converterProduct);
+
+        modelMapper.addMappings(new PropertyMap<VenueDTO, Venue>() {
+            @Override
+            protected void configure() {
+                map().setFoursquareId(source.getFoursquareId());
+                skip(destination.getVenueId());
+            }
+        });
+
 		/*Converter<BasketDTO, Basket> converter = context -> {
 			Basket entity = context.getDestination();
 

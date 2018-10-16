@@ -24,7 +24,7 @@ public class Venue implements Serializable {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "menuItemId")
+    @JoinColumn(name = "menuItemId", nullable = true)
     private Item menuItem;
 
     private String venueName;

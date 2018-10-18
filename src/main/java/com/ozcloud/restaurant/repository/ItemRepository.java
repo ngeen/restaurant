@@ -10,4 +10,5 @@ public interface ItemRepository extends CrudRepository<Item, Long> {
     public List<Item> findAllByOrderByItemTypeAsc();
     Item findByItemGuid(String guid);
     public List<Item> findAllByUser(User user);
+    public Item findByItemId(long id);
 }

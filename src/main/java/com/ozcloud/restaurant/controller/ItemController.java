@@ -7,6 +7,7 @@ import com.ozcloud.restaurant.enums.ItemType;
 import com.ozcloud.restaurant.model.Item;
 import com.ozcloud.restaurant.model.Product;
 import com.ozcloud.restaurant.repository.ItemRepository;
+import com.ozcloud.restaurant.repository.ProductRepository;
 import com.ozcloud.restaurant.service.UserServiceImpl;
 import com.ozcloud.restaurant.utils.BaseResponse;
 import org.modelmapper.ModelMapper;
@@ -18,8 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,12 +36,20 @@ public class ItemController implements Serializable {
     private ItemRepository itemRepository;
 
     @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
     private UserServiceImpl userServiceImpl;
 
+    private List<Item> items;
+
     @GetMapping("/getItems")
+    @Transactional
     public ResponseEntity<BaseResponse> getAllItems() throws Exception {
         try {
-            List<Item> items = Lists.newArrayList(itemRepository.findAllByOrderByItemTypeAsc());
+            items = new ArrayList<Item>();
+            Item item = itemRepository.findByItemId(1L);
+            getAllTree(item);
 
             Type listType = new TypeToken<List<ProductDTO>>() {}.getType();
             List<ProductDTO> itemList = modelMapper.map(items,listType);
@@ -46,6 +57,17 @@ public class ItemController implements Serializable {
             return ResponseEntity.ok(BaseResponse.getOkResponse(itemList));
         } catch (Exception e) {
             throw  new Exception(e);
+        }
+
+    }
+
+    private void getAllTree(Item item){
+        if(item.getChildren().size() > 0){
+            for (Item myItem: item.getChildren()) {
+                getAllTree(myItem);
+            }
+        } else {
+            items.add(item);
         }
 
     }
@@ -126,16 +148,24 @@ public class ItemController implements Serializable {
     }
 
     @PostMapping("/updateItem")
-    public ResponseEntity<BaseResponse> updateItem(@RequestBody ItemDTO itemDTO) throws Exception {
+    public ResponseEntity<BaseResponse> updateItem(@RequestBody ProductDTO productDTO) throws Exception {
         try {
-            Item item = itemRepository.findByItemGuid(itemDTO.getItemGuid());
+            Product item = productRepository.findByItemGuid(productDTO.getItemGuid());
             if(item == null)
                 throw new Exception("MissingItem");
 
             if(item.getUser().getUserId() != userServiceImpl.getAuthUser().getUserId())
                 throw new Exception("WrongUser");
 
-            item = modelMapper.map(itemDTO, Item.class);
+            item.setName(productDTO.getName());
+            item.setDescription(productDTO.getDescription());
+            item.setImage(productDTO.getImage());
+            if(productDTO.getItemType() == "PRODUCT")
+            {
+                item.setPrice(productDTO.getPrice());
+                item.setCalories(productDTO.getCalories());
+                item.setPrepareTime(productDTO.getPrepareTime());
+            }
             item = itemRepository.save(item);
 
             ItemDTO returnItem = modelMapper.map(item, ItemDTO.class);

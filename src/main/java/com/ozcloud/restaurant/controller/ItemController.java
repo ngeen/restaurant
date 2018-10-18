@@ -77,7 +77,9 @@ public class ItemController implements Serializable {
             menu.setItemGuid(uuid.toString());
             menu = itemRepository.save(menu);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(menu.getItemId())));
+            ItemDTO returnMenu = modelMapper.map(menu, ItemDTO.class);
+
+            return ResponseEntity.ok(BaseResponse.getOkResponse(returnMenu));
         } catch (Exception e) {
             throw  new Exception(e);
         }
@@ -96,7 +98,8 @@ public class ItemController implements Serializable {
             item.setItemGuid(uuid.toString());
             item = itemRepository.save(item);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(item.getItemId())));
+            ItemDTO returnItem = modelMapper.map(item, ItemDTO.class);
+            return ResponseEntity.ok(BaseResponse.getOkResponse(returnItem));
         } catch (Exception e) {
             throw  new Exception(e);
         }
@@ -115,7 +118,8 @@ public class ItemController implements Serializable {
             product.setItemGuid(uuid.toString());
             product = itemRepository.save(product);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(Long.valueOf(product.getItemId())));
+            ProductDTO returnProduct = modelMapper.map(product, ProductDTO.class);
+            return ResponseEntity.ok(BaseResponse.getOkResponse(returnProduct));
         } catch (Exception e) {
             throw  new Exception(e);
         }
@@ -134,7 +138,8 @@ public class ItemController implements Serializable {
             item = modelMapper.map(itemDTO, Item.class);
             item = itemRepository.save(item);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(item.getItemGuid()));
+            ItemDTO returnItem = modelMapper.map(item, ItemDTO.class);
+            return ResponseEntity.ok(BaseResponse.getOkResponse(returnItem));
         } catch (Exception e) {
             throw  new Exception(e);
         }

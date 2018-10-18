@@ -66,6 +66,7 @@ public class ItemController implements Serializable {
             for (Item myItem: item.getChildren()) {
                 getAllTree(myItem);
             }
+            items.add(item);
         } else {
             items.add(item);
         }

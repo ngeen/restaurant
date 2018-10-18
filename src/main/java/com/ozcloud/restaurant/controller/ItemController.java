@@ -50,6 +50,21 @@ public class ItemController implements Serializable {
 
     }
 
+    @GetMapping("/getUserItems")
+    public ResponseEntity<BaseResponse> getUserItems() throws Exception {
+        try {
+            List<Item> items = Lists.newArrayList(itemRepository.findAllByUser(userServiceImpl.getAuthUser()));
+
+            Type listType = new TypeToken<List<ProductDTO>>() {}.getType();
+            List<ProductDTO> itemList = modelMapper.map(items,listType);
+
+            return ResponseEntity.ok(BaseResponse.getOkResponse(itemList));
+        } catch (Exception e) {
+            throw  new Exception(e);
+        }
+
+    }
+
     @PostMapping("/createMenu")
     public ResponseEntity<BaseResponse> createMenu(@RequestBody ItemDTO itemDTO) throws Exception {
         try {

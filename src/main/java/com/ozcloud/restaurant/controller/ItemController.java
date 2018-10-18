@@ -151,7 +151,7 @@ public class ItemController implements Serializable {
     @PostMapping("/updateItem")
     public ResponseEntity<BaseResponse> updateItem(@RequestBody ProductDTO productDTO) throws Exception {
         try {
-            Product item = productRepository.findByItemGuid(productDTO.getItemGuid());
+            Item item = itemRepository.findByItemGuid(productDTO.getItemGuid());
             if(item == null)
                 throw new Exception("MissingItem");
 
@@ -163,9 +163,9 @@ public class ItemController implements Serializable {
             item.setImage(productDTO.getImage());
             if(productDTO.getItemType() == "PRODUCT")
             {
-                item.setPrice(productDTO.getPrice());
-                item.setCalories(productDTO.getCalories());
-                item.setPrepareTime(productDTO.getPrepareTime());
+                ((Product)item).setPrice(productDTO.getPrice());
+                ((Product)item).setCalories(productDTO.getCalories());
+                ((Product)item).setPrepareTime(productDTO.getPrepareTime());
             }
             item = itemRepository.save(item);
 

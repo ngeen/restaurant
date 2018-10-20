@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.ozcloud.restaurant.dtos.ItemDTO;
 import com.ozcloud.restaurant.dtos.ProductDTO;
 import com.ozcloud.restaurant.enums.ItemType;
+import com.ozcloud.restaurant.enums.Status;
 import com.ozcloud.restaurant.model.Item;
 import com.ozcloud.restaurant.model.Product;
 import com.ozcloud.restaurant.repository.ItemRepository;
@@ -91,10 +92,9 @@ public class ItemController implements Serializable {
     @PostMapping("/createMenu")
     public ResponseEntity<BaseResponse> createMenu(@RequestBody ItemDTO itemDTO) throws Exception {
         try {
-            Item menu = new Item();
+
+            Item menu = modelMapper.map(itemDTO, Item.class);
             menu.setItemType(ItemType.MENU);
-            menu.setName(itemDTO.getName());
-            menu.setDescription(itemDTO.getDescription());
             menu.setUser(userServiceImpl.getAuthUser());
             UUID uuid = UUID.randomUUID();
             menu.setItemGuid(uuid.toString());
@@ -115,13 +115,15 @@ public class ItemController implements Serializable {
                 throw new Exception("MissingMenu");
 
             Item item = modelMapper.map(itemDTO, Item.class);
-            item.setItemType(ItemType.MENU);
+            item.setItemType(ItemType.CATEGORY);
             item.setUser(userServiceImpl.getAuthUser());
             UUID uuid = UUID.randomUUID();
             item.setItemGuid(uuid.toString());
             item = itemRepository.save(item);
 
             ItemDTO returnItem = modelMapper.map(item, ItemDTO.class);
+
+
             return ResponseEntity.ok(BaseResponse.getOkResponse(returnItem));
         } catch (Exception e) {
             throw  new Exception(e);

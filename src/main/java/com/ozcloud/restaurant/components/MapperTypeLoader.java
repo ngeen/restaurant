@@ -6,6 +6,7 @@ import com.ozcloud.restaurant.dtos.VenueDTO;
 import com.ozcloud.restaurant.enums.ItemType;
 import com.ozcloud.restaurant.enums.Status;
 import com.ozcloud.restaurant.model.Item;
+import com.ozcloud.restaurant.model.Product;
 import com.ozcloud.restaurant.model.Venue;
 import com.ozcloud.restaurant.repository.ItemRepository;
 import org.modelmapper.Converter;
@@ -79,6 +80,25 @@ public class MapperTypeLoader implements ApplicationRunner {
                 skip(destination.getItemType());
             }
         }).setPostConverter(converterItemDTO);
+
+        Converter<ProductDTO, Product> converterProductDTO = context -> {
+            ProductDTO itemDTO = context.getSource();
+            Product item = context.getDestination();
+            if(itemDTO.getParentId() > 0)
+                item.setParentItem(itemRepository.findByItemId(itemDTO.getParentId()));
+
+            return item;
+
+        };
+
+        modelMapper.addMappings(new PropertyMap<ProductDTO, Product>() {
+            @Override
+            protected void configure() {
+                //map().setFoursquareId(source.getFoursquareId());
+                skip(destination.getStatus());
+                skip(destination.getItemType());
+            }
+        }).setPostConverter(converterProductDTO);
 
 		/*Converter<BasketDTO, Basket> converter = context -> {
 			Basket entity = context.getDestination();

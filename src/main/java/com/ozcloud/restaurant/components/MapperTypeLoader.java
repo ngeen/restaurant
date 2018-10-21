@@ -96,6 +96,7 @@ public class MapperTypeLoader implements ApplicationRunner {
             protected void configure() {
                 //map().setFoursquareId(source.getFoursquareId());
                 skip(destination.getStatus());
+                skip(destination.getProductStatus());
                 skip(destination.getItemType());
             }
         }).setPostConverter(converterProductDTO);

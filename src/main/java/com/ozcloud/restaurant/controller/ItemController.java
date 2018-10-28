@@ -62,6 +62,28 @@ public class ItemController implements Serializable {
 
     }
 
+    @PostMapping("/getItemsByGuid")
+    @Transactional
+    public ResponseEntity<BaseResponse> getAllItemsByGuid(@RequestBody String guid) throws Exception {
+        try {
+            items = new ArrayList<Item>();
+            Item item = itemRepository.findByItemGuid(guid);
+
+            if(item == null)
+                throw new Exception("MissingItem");
+
+            getAllTree(item);
+
+            Type listType = new TypeToken<List<ProductDTO>>() {}.getType();
+            List<ProductDTO> itemList = modelMapper.map(items,listType);
+
+            return ResponseEntity.ok(BaseResponse.getOkResponse(itemList));
+        } catch (Exception e) {
+            throw  new Exception(e);
+        }
+
+    }
+
     private void getAllTree(Item item){
         if(item.getChildren().size() > 0){
             for (Item myItem: item.getChildren()) {

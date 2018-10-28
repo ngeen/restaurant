@@ -50,6 +50,12 @@ public class Item implements Serializable {
     @JsonBackReference
     private List<Venue> venueList = new LinkedList<Venue>();
 
+    @OneToMany
+    @JsonIgnore
+    @JoinColumn(name = "itemMediaId")
+    @JsonBackReference
+    private List<Media> itemMediaList = new LinkedList<Media>();
+
     @ManyToOne
     @JoinColumn(name = "parentId")
     @JsonManagedReference

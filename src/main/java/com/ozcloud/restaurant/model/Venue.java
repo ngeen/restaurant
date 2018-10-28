@@ -1,12 +1,16 @@
 package com.ozcloud.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.codehaus.jackson.annotate.JsonBackReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,6 +30,12 @@ public class Venue implements Serializable {
     @ManyToOne
     @JoinColumn(name = "menuItemId", nullable = true)
     private Item menuItem;
+
+    @OneToMany
+    @JsonIgnore
+    @JoinColumn(name = "venueMediaId")
+    @JsonBackReference
+    private List<Media> venueMediaList = new LinkedList<Media>();
 
     private String venueName;
 

@@ -48,16 +48,12 @@ public class MediaController implements Serializable {
     @PostMapping("/saveMedia")
     @ResponseBody
     public ResponseEntity<BaseResponse> saveMedia(@RequestParam("file") MultipartFile file, @RequestParam("userId") String userId,
-                                                  @RequestParam("venueId") String venueId, @RequestParam("itemId") String itemId,
-                                                  @RequestParam("mediaType") String mediaType) throws Exception {
+                                                  @RequestParam("venueId") String venueId, @RequestParam("itemId") String itemId) throws Exception {
         try {
             UUID uuid = UUID.randomUUID();
 
             if(userId.isEmpty() && venueId.isEmpty() && itemId.isEmpty())
                 throw new Exception("Missing Ids");
-
-            if(mediaType.isEmpty())
-                throw new Exception("Missing Type");
 
             if (!file.isEmpty()) {
                 byte[] bytes = file.getBytes();
@@ -68,17 +64,22 @@ public class MediaController implements Serializable {
 
             Media media = new Media();
 
-            if(!userId.isEmpty())
+            if(!userId.isEmpty()){
                 media.setUser(userRepository.findById(Long.valueOf(userId)).orElse(null));
+                media.setMediaType(MediaType.USER);
+            }
 
-            if(!venueId.isEmpty())
+
+            if(!venueId.isEmpty()){
                 media.setVenue(venueRepository.findById(Long.valueOf(venueId)).orElse(null));
+                media.setMediaType(MediaType.VENUE);
+            }
 
-            if(!itemId.isEmpty())
+
+            if(!itemId.isEmpty()){
                 media.setMenuItem(itemRepository.findById(Long.valueOf(itemId)).orElse(null));
-
-            if(!mediaType.isEmpty())
-                media.setMediaType(MediaType.parse(Integer.valueOf(mediaType)));
+                media.setMediaType(MediaType.ITEM);
+            }
 
             media.setFileName(file.getOriginalFilename());
             media.setMediaGuid(uuid.toString());

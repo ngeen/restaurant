@@ -116,6 +116,7 @@ public class ItemController implements Serializable {
         try {
 
             Item menu = modelMapper.map(itemDTO, Item.class);
+            menu.setParentItem(null);
             menu.setItemType(ItemType.MENU);
             menu.setUser(userServiceImpl.getAuthUser());
             UUID uuid = UUID.randomUUID();

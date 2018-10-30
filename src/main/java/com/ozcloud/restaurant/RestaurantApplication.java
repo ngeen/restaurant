@@ -12,6 +12,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.MultipartFilter;
 
 import java.util.Collections;
 
@@ -44,9 +45,17 @@ public class RestaurantApplication {
 	}
 
 	@Bean
-	public CommonsMultipartResolver multipartResolver() {
-		CommonsMultipartResolver resolver=new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("utf-8");
-		return resolver;
+	public CommonsMultipartResolver commonsMultipartResolver() {
+		final CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+		commonsMultipartResolver.setMaxUploadSize(-1);
+		return commonsMultipartResolver;
+	}
+
+	@Bean
+	public FilterRegistrationBean multipartFilterRegistrationBean() {
+		final MultipartFilter multipartFilter = new MultipartFilter();
+		final FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(multipartFilter);
+		filterRegistrationBean.addInitParameter("multipartResolverBeanName", "commonsMultipartResolver");
+		return filterRegistrationBean;
 	}
 }

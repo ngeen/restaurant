@@ -97,6 +97,7 @@ public class ItemController implements Serializable {
     }
 
     @GetMapping("/getUserItems")
+    @Transactional
     public ResponseEntity<BaseResponse> getUserItems() throws Exception {
         try {
             List<Item> items = Lists.newArrayList(itemRepository.findAllByUser(userServiceImpl.getAuthUser()));

@@ -96,6 +96,7 @@ public class MapperTypeLoader implements ApplicationRunner {
                 skip(destination.getUserId());
                 skip(destination.getMenuItemId());
                 skip(destination.getMediaType());
+                skip(destination.getStatus());
             }
         }).setPostConverter(converterMedia);
 

@@ -87,9 +87,9 @@ public class MediaController implements Serializable {
             media.setStatus(Status.ACTIVE);
             String link = String.format("https://images.oenginoz.com/unsafe/%s/%s", "%s", media.getFileName());
             media.setMediaLink(link);
-            mediaRepository.save(media);
+            media = mediaRepository.save(media);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(link));
+            return ResponseEntity.ok(BaseResponse.getOkResponse(media));
         } catch (Exception e) {
             throw  new Exception(e);
         }

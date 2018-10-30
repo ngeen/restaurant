@@ -2,10 +2,12 @@ package com.ozcloud.restaurant.controller;
 
 import com.google.common.collect.Lists;
 import com.ozcloud.restaurant.dtos.ItemDTO;
+import com.ozcloud.restaurant.dtos.MediaDTO;
 import com.ozcloud.restaurant.dtos.ProductDTO;
 import com.ozcloud.restaurant.enums.ItemType;
 import com.ozcloud.restaurant.enums.Status;
 import com.ozcloud.restaurant.model.Item;
+import com.ozcloud.restaurant.model.Media;
 import com.ozcloud.restaurant.model.Product;
 import com.ozcloud.restaurant.repository.ItemRepository;
 import com.ozcloud.restaurant.repository.ProductRepository;
@@ -102,8 +104,18 @@ public class ItemController implements Serializable {
         try {
             List<Item> items = Lists.newArrayList(itemRepository.findAllByUser(userServiceImpl.getAuthUser()));
 
-            Type listType = new TypeToken<List<ProductDTO>>() {}.getType();
-            List<ProductDTO> itemList = modelMapper.map(items,listType);
+//            Type listType = new TypeToken<List<ProductDTO>>() {}.getType();
+//            List<ProductDTO> itemList = modelMapper.map(items,listType);
+            List<ProductDTO> itemList= new ArrayList<>();
+            for (Item item: items) {
+                ProductDTO pDto = modelMapper.map(item, ProductDTO.class);
+                List<MediaDTO> mediasDto = new ArrayList<>();
+                for (Media media : item.getItemMediaList() ) {
+                    mediasDto.add(modelMapper.map(media, MediaDTO.class));
+                }
+                pDto.setMedias(mediasDto);
+                itemList.add(pDto);
+            }
 
             return ResponseEntity.ok(BaseResponse.getOkResponse(itemList));
         } catch (Exception e) {

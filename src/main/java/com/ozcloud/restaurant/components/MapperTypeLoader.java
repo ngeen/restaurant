@@ -56,10 +56,6 @@ public class MapperTypeLoader implements ApplicationRunner {
             Item item = context.getSource();
             if(item.getParentItem() != null)
                 productDTO.setParentId(item.getParentItem().getItemId());
-            if(item.getItemMediaList() != null && item.getItemMediaList().size() > 0){
-                Type listType = new TypeToken<List<MediaDTO>>() {}.getType();
-                productDTO.setMedias(modelMapper.map(item.getItemMediaList(),listType));
-            }
 
             return productDTO;
 

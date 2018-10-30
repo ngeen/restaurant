@@ -82,6 +82,9 @@ public class MapperTypeLoader implements ApplicationRunner {
             if(media.getUser() != null)
                 mediaDTO.setVenueId(media.getVenue().getVenueId());
 
+            if(media.getMediaType() != null)
+                mediaDTO.setMediaType(media.getMediaType().getValue());
+
             return mediaDTO;
 
         };
@@ -92,6 +95,7 @@ public class MapperTypeLoader implements ApplicationRunner {
                 skip(destination.getVenueId());
                 skip(destination.getUserId());
                 skip(destination.getMenuItemId());
+                skip(destination.getMediaType());
             }
         }).setPostConverter(converterMedia);
 

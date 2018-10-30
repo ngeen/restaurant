@@ -51,14 +51,15 @@ public class MediaController implements Serializable {
                                                   @RequestParam("venueId") String venueId, @RequestParam("itemId") String itemId) throws Exception {
         try {
             UUID uuid = UUID.randomUUID();
+            String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+            String newImageFile = uuid.toString() + "." + extension;
 
             if(userId.isEmpty() && venueId.isEmpty() && itemId.isEmpty())
                 throw new Exception("Missing Ids");
 
             if (!file.isEmpty()) {
                 byte[] bytes = file.getBytes();
-                String extension = FilenameUtils.getExtension(file.getOriginalFilename());
-                Path path = Paths.get(UPLOADED_FOLDER + uuid.toString() + "." + extension);
+                Path path = Paths.get(UPLOADED_FOLDER + newImageFile);
                 Files.write(path, bytes);
             }
 
@@ -81,7 +82,7 @@ public class MediaController implements Serializable {
                 media.setMediaType(MediaType.ITEM);
             }
 
-            media.setFileName(file.getOriginalFilename());
+            media.setFileName(newImageFile);
             media.setMediaGuid(uuid.toString());
             media.setStatus(Status.ACTIVE);
             String link = String.format("https://images.oenginoz.com/unsafe/%s/%s", "%s", media.getFileName());

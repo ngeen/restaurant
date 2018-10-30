@@ -10,12 +10,15 @@ import com.ozcloud.restaurant.repository.VenueRepository;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import javax.print.attribute.standard.Destination;
+import java.lang.reflect.Type;
+import java.util.List;
 
 @Component
 public class MapperTypeLoader implements ApplicationRunner {
@@ -53,6 +56,10 @@ public class MapperTypeLoader implements ApplicationRunner {
             Item item = context.getSource();
             if(item.getParentItem() != null)
                 productDTO.setParentId(item.getParentItem().getItemId());
+            if(item.getItemMediaList().size() > 0){
+                Type listType = new TypeToken<List<MediaDTO>>() {}.getType();
+                productDTO.setMedias(modelMapper.map(item.getItemMediaList(),listType));
+            }
 
             return productDTO;
 

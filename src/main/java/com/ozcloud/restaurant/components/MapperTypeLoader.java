@@ -59,23 +59,6 @@ public class MapperTypeLoader implements ApplicationRunner {
         };
         modelMapper.createTypeMap(Item.class, ProductDTO.class).setPostConverter(converterProduct);
 
-        Converter<Media, MediaDTO> converterMedia = context -> {
-            MediaDTO mediaDTO = context.getDestination();
-            Media media = context.getSource();
-            if(media.getVenue() != null)
-                mediaDTO.setVenueId(media.getVenue().getVenueId());
-
-            if(media.getUser() != null)
-                mediaDTO.setUserId(media.getUser().getUserId());
-
-            if(media.getMenuItem() != null)
-                mediaDTO.setMenuItemId(media.getMenuItem().getItemId());
-
-            return mediaDTO;
-
-        };
-        modelMapper.createTypeMap(Media.class, MediaDTO.class).setPostConverter(converterMedia);
-
         Converter<ProductExtension, ProductExtDTO> converterProductExt = context -> {
             ProductExtDTO productExtDTO = context.getDestination();
             ProductExtension productExtension = context.getSource();
@@ -86,7 +69,7 @@ public class MapperTypeLoader implements ApplicationRunner {
         };
         modelMapper.createTypeMap(ProductExtension.class, ProductExtDTO.class).setPostConverter(converterProductExt);
 
-        /*Converter<Media, MediaDTO> converterMedia = context -> {
+        Converter<Media, MediaDTO> converterMedia = context -> {
             MediaDTO mediaDTO = context.getDestination();
             Media media = context.getSource();
 
@@ -103,7 +86,14 @@ public class MapperTypeLoader implements ApplicationRunner {
 
         };
 
-        modelMapper.createTypeMap(Media.class, MediaDTO.class).setPostConverter(converterMedia);*/
+        modelMapper.addMappings(new PropertyMap<Media, MediaDTO>() {
+            @Override
+            protected void configure() {
+                skip(destination.getVenueId());
+                skip(destination.getUserId());
+                skip(destination.getMenuItemId());
+            }
+        }).setPostConverter(converterMedia);
 
         modelMapper.addMappings(new PropertyMap<VenueDTO, Venue>() {
             @Override

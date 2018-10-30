@@ -89,7 +89,9 @@ public class MediaController implements Serializable {
             media.setMediaLink(link);
             media = mediaRepository.save(media);
 
-            return ResponseEntity.ok(BaseResponse.getOkResponse(media));
+            MediaDTO returnDTO = modelMapper.map(media, MediaDTO.class);
+
+            return ResponseEntity.ok(BaseResponse.getOkResponse(returnDTO));
         } catch (Exception e) {
             throw  new Exception(e);
         }

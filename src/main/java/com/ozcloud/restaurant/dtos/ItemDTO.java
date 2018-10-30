@@ -20,6 +20,5 @@ public class ItemDTO {
     private String itemType;
     private int orderNo;
     private long parentId;
-    private List<MediaDTO> medias;
 
 }

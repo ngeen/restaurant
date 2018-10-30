@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,4 +15,5 @@ public class ProductDTO extends  ItemDTO {
     private boolean isVirtualCategory;
     private int virtualOrderNo;
     private BigDecimal price;
+    private List<MediaDTO> medias;
 }

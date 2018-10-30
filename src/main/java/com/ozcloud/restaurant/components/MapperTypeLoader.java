@@ -59,6 +59,23 @@ public class MapperTypeLoader implements ApplicationRunner {
         };
         modelMapper.createTypeMap(Item.class, ProductDTO.class).setPostConverter(converterProduct);
 
+        Converter<Media, MediaDTO> converterMedia = context -> {
+            MediaDTO mediaDTO = context.getDestination();
+            Media media = context.getSource();
+            if(media.getVenue() != null)
+                mediaDTO.setVenueId(media.getVenue().getVenueId());
+
+            if(media.getUser() != null)
+                mediaDTO.setUserId(media.getUser().getUserId());
+
+            if(media.getMenuItem() != null)
+                mediaDTO.setMenuItemId(media.getMenuItem().getItemId());
+
+            return mediaDTO;
+
+        };
+        modelMapper.createTypeMap(Media.class, MediaDTO.class).setPostConverter(converterMedia);
+
         Converter<ProductExtension, ProductExtDTO> converterProductExt = context -> {
             ProductExtDTO productExtDTO = context.getDestination();
             ProductExtension productExtension = context.getSource();

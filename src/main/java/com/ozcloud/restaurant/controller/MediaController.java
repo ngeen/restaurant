@@ -102,7 +102,7 @@ public class MediaController implements Serializable {
     }
 
     @PostMapping("/deleteMedia")
-    public ResponseEntity<BaseResponse> createMenu(@RequestBody MediaDTO mediaDTO) throws Exception {
+    public ResponseEntity<BaseResponse> deleteMedia(@RequestBody MediaDTO mediaDTO) throws Exception {
         try {
 
             Media media = mediaRepository.findByMediaGuid(mediaDTO.getMediaGuid());

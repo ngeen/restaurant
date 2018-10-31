@@ -1,9 +1,12 @@
 package com.ozcloud.restaurant.controller;
 
+import com.ozcloud.restaurant.dtos.ItemDTO;
 import com.ozcloud.restaurant.dtos.MediaDTO;
 import com.ozcloud.restaurant.dtos.UserDTO;
+import com.ozcloud.restaurant.enums.ItemType;
 import com.ozcloud.restaurant.enums.MediaType;
 import com.ozcloud.restaurant.enums.Status;
+import com.ozcloud.restaurant.model.Item;
 import com.ozcloud.restaurant.model.Media;
 import com.ozcloud.restaurant.model.User;
 import com.ozcloud.restaurant.repository.ItemRepository;
@@ -96,5 +99,21 @@ public class MediaController implements Serializable {
             throw  new Exception(e);
         }
 
+    }
+
+    @PostMapping("/deleteMedia")
+    public ResponseEntity<BaseResponse> createMenu(@RequestBody MediaDTO mediaDTO) throws Exception {
+        try {
+
+            Media media = mediaRepository.findByMediaGuid(mediaDTO.getMediaGuid());
+            Path path = Paths.get(UPLOADED_FOLDER + media.getFileName());
+            Files.deleteIfExists(path);
+
+            mediaRepository.delete(media);
+
+            return ResponseEntity.ok(BaseResponse.getOkResponse("success"));
+        } catch (Exception e) {
+            throw  new Exception(e);
+        }
     }
 }

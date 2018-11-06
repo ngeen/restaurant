@@ -17,4 +17,6 @@ public class VenueDTO {
     private String foursquareId;
 
     private int infoScreenStatus;
+
+    private long menuItemId;
 }

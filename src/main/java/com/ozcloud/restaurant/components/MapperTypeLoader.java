@@ -103,6 +103,14 @@ public class MapperTypeLoader implements ApplicationRunner {
             }
         }).setPostConverter(converterMedia);
 
+        Converter<Venue, VenueDTO> converterVenue = context -> {
+            VenueDTO venueDTO = context.getDestination();
+            Venue venue = context.getSource();
+
+            return venueDTO;
+
+        };
+
         modelMapper.addMappings(new PropertyMap<VenueDTO, Venue>() {
             @Override
             protected void configure() {
